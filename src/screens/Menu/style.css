@@ -1,0 +1,37 @@
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    max-height: 20%;
+    background-color: #2E2D2D;
+    color: white;
+}
+
+.nav-bar-items {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav-bar-items li {
+    display: flex;
+    align-items: center;
+}
+
+#brand {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 34px;
+}
+
+#about {
+    display: flex;
+    gap: 20px;
+    font-size: 32px;
+    margin-right: 29px;
+}
+
+.nav-bar-block {
+    background-color: #262222;
+    height: 77px;
+}
