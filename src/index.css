@@ -7,5 +7,13 @@
 }
 
 #root {
+  background-color: #2E2D2D;
   font-family: Inter;
+  min-height: 100vh;
+}
+
+.body {
+  display: flex;
+  background-color: white;
+  margin: 100%;
 }
