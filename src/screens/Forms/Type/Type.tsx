@@ -9,8 +9,21 @@ export function Type(){
                 <p id="type-title">Tipo de produção:</p>
 
                 <div id="type-items">
-                    <CheckboxInput className="type-checkbox-variation"/>
-                    <CheckboxInput className="type-checkbox-variation"/>
+                    <form>
+                        <label className="type-checkbox-variation">
+                            <input type="radio" id="producao-empurrada" name="production-type"/>
+                            <span>Produção empurrada</span>
+                        </label>
+
+                        <div className="type-checkbox-variation">
+                            <input type="radio" id="producao-puxada" name="production-type"/>
+                            <label htmlFor="producao-puxada">Produção puxada</label>
+                        </div>
+                        
+                    </form>
+                    
+                    {/* <CheckboxInput className="type-checkbox-variation"/>
+                    <CheckboxInput className="type-checkbox-variation"/> */}
                     <Button text="Continuar"/>
                 </div>
             </div>

@@ -32,6 +32,16 @@
     color: #FFFFFF;
 }
 
-.type-checkbox-variation > input {
+.type-checkbox-variation > input[type="radio"] {
+    appearance: none;
+    background-color: #FFFFFF;
+    outline: 2px solid #333;
+    border: 3px solid #FFFFFF;
+    width: 30px;
+    height: 30px;
     margin-left: 18px;
+}
+
+.type-checkbox-variation > input[type="radio"]:checked {
+    background-color: #3994FF;
 }
