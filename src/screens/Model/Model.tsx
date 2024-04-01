@@ -11,7 +11,7 @@ export function Model(){
                 <div id="model">
                     {
                     keys.map((item) => (
-                        <div className="productive-unit">
+                        <div className="productive-unit" id={"" + item}>
 
                         </div>
                         ))

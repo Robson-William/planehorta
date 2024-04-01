@@ -1,6 +1,5 @@
 import Button from "../../../components/Button/Button"
 import { Dropdown } from "../../../components/Dropdown/Dropdown"
-import { BasicInput } from "../../../components/Input/BasicInput"
 import { CheckboxInput } from "../../../components/Input/CheckboxInput"
 import "./style.css"
 

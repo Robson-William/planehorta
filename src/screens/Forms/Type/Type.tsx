@@ -1,5 +1,4 @@
 import Button from "../../../components/Button/Button"
-import { CheckboxInput } from "../../../components/Input/CheckboxInput"
 import "./style.css"
 
 export function Type(){
