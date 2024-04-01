@@ -1,0 +1,15 @@
+.button-next {
+    width: 205px;
+    height: 53px;
+    align-self: center;
+    text-align: center;
+    background-color: #3994FF;
+    border: none;
+    border-radius: 9px;
+}
+
+.button-next > span {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+}
