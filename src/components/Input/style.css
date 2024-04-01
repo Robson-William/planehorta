@@ -1,4 +1,4 @@
-input {
+.basic-input {
     width: 152px;
     height: 48px;
     text-align: center;
@@ -7,6 +7,20 @@ input {
     color: #9F9F9F;
 }
 
-input:focus {
+.basic-input:focus {
     color: #000000;
+}
+
+/* Checkbox */
+
+.custom-input-checkbox {
+    width: 30px;
+    height: 30px;
+}
+
+.custom-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+    gap: 19px
 }
