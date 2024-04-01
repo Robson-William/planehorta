@@ -1,5 +1,82 @@
 .production-mode {
+    flex-direction: column;
     margin: 43px 306px 94px;
+    padding: 69px 0px;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+}
+
+#production-items {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 32px;
+}
+
+
+.info-container {
+    display: flex;
+    width: 150px;
+    height: 39px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #171717;
+    border: #000000 1px solid;
+    border-radius: 10px;
+}
+
+/* NEW COMPONENT */
+
+.list-production-info {
+    display: flex;
+    width: 530px;
+    height: 39px;
+    margin-top: 27px;
+}
+
+.hortalica-name {
+    display: flex;
+    background-color: #252323;
+    width: 207px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.desired-production-input {
+    width: 89px;
+    height: 39px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #171717;
+}
+
+.necessary-productive-units {
+    background-color: #252323;
+    display: flex;
+    width: 102px;
+    height: 39px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.initial-date-input {
+    width: 131px;
+    height: 39px;
+    text-align: center;
+    border: 1px solid #171717;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
