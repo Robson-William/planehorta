@@ -22,9 +22,7 @@ export function Type(){
                         
                     </form>
                     
-                    {/* <CheckboxInput className="type-checkbox-variation"/>
-                    <CheckboxInput className="type-checkbox-variation"/> */}
-                    <Button text="Continuar"/>
+                    <Button text="Continuar" link="/planejar/modelo"/>
                 </div>
             </div>
         </>

@@ -42,3 +42,24 @@
     font-weight: bold;
     margin-left: 97px;
 }
+
+#model {
+    display: grid;
+    grid-template-rows: repeat(9, 50px);
+    grid-template-columns: repeat(13, 50px);
+    grid-auto-flow: column;
+    column-gap: 9px;
+    background-color: #2AAF74;
+    width: 1000px;
+    height: 505px;
+    margin-left: 97px;
+    padding: 27px 55px;
+    border-radius: 10px;
+}
+
+.productive-unit {
+    background-color: #E19955;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000000;
+}

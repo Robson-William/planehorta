@@ -1,12 +1,23 @@
 import "./style.css"
 
 export function Model(){
+    const keys = [...Array(135).keys()]
+
     return (
         <>
             <div className="body model-mode">
                 <span id="model-title">Modelo</span>
                 
+                <div id="model">
+                    {
+                    keys.map((item) => (
+                        <div className="productive-unit">
 
+                        </div>
+                        ))
+                    }
+
+                </div>
 
                 <span id="production-title">Produção</span>
 
