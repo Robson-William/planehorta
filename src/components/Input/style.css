@@ -1,0 +1,12 @@
+input {
+    width: 152px;
+    height: 48px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #9F9F9F;
+}
+
+input:focus {
+    color: #000000;
+}
