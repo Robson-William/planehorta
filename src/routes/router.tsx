@@ -4,6 +4,7 @@ import { Area } from "../screens/Forms/Area/Area";
 import { Production } from "../screens/Forms/Production/Production";
 import { Type } from "../screens/Forms/Type/Type";
 import { LandingPage } from "../screens/LandingPage/LandingPage";
+import { Model } from "../screens/Model/Model";
 
 export const routes = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const routes = createBrowserRouter([
             {
                 path: "/planejar/tipo",
                 element: <Type />
+            },
+            {
+                path: "/planejar/modelo",
+                element: <Model />
             }
         ]
     }
