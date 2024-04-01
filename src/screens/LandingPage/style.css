@@ -1,0 +1,29 @@
+.landing-mode {
+    background: #FFFFFF;
+    margin: 29px 57px;
+    height: 536px;
+}
+
+.landing-mode img {
+    width: 50%;
+    height: 100%;
+}
+
+.landing-mode div {
+    display: flex;
+    flex-direction: column;
+    padding: 69px 72px;
+
+}
+
+.landing-mode div p {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Button */
+.landing-variation {
+    width: 379px;
+    align-self:flex-end
+}
