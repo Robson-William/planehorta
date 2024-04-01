@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom"
 import "./style.css"
 
 type Props = {
     text:string,
-    className?:string
+    className?:string,
+    link:string
 }
 
-export default function Button({text, className}:Props) {
+export default function Button({text, className, link}:Props) {
     return (
         <>
-            <button className={"button-next" + " " + className}>
-                <span>{text}</span>
-            </button>
+            <div className={"button-next" + " " + className}>
+                <Link to={link}>{text}</Link>
+            </div>
         </>
     )
 }

@@ -9,17 +9,19 @@
     height: 100%;
 }
 
-.landing-mode div {
+.landing-mode > div {
     display: flex;
     flex-direction: column;
     padding: 69px 72px;
 
 }
 
-.landing-mode div p {
+.landing-mode > div > p {
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: bold;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* Button */

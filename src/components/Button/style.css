@@ -2,14 +2,19 @@
     width: 205px;
     height: 53px;
     align-self: center;
-    text-align: center;
     background-color: #3994FF;
     border: none;
     border-radius: 9px;
 }
 
-.button-next > span {
+.button-next > a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
     font-weight: bold;
     font-size: 20px;
     color: #000000;
+    text-align: center;
 }

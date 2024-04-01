@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./style.css";
 
 export function Menu(){
@@ -5,10 +6,10 @@ export function Menu(){
         <>
             <nav className="nav-bar">
                 <ul className="nav-bar-items">
-                    <li id="brand">PlaneHorta</li>
+                    <Link id="brand" to={"/"}>PlaneHorta</Link>
                     <div id="about">
-                        <li>Planejar</li>
-                        <li>Sobre</li>
+                        <Link to={"/planejar/area"}>Planejar</Link>
+                        <Link to={"#"}>Sobre</Link>
                     </div>
                 </ul>
 

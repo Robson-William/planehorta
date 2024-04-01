@@ -33,7 +33,7 @@ export function Production(){
                         <span>15</span>
                     </div>
 
-                    <Button text="Continuar"/>
+                    <Button text="Continuar" link="/planejar/tipo" />
                 </div>
             </div>
         </>

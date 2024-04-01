@@ -21,7 +21,7 @@ export function Area(){
                         <BasicInput type="number" id="input-productive-units" placeholder="0" isDisabled />
                     </div>
 
-                    <Button text="Continuar" />
+                    <Button text="Continuar" link="/planejar/producao" />
                 </form>
             </div>
         </>
