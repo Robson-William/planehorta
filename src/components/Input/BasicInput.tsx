@@ -3,19 +3,16 @@ import "./style.css"
 type Props = {
     type: string,
     id: string,
-    placeholder: string
+    placeholder: string,
     isDisabled?: boolean
 }
 
-export function BasicInput({type, id, placeholder, isDisabled}:Props){
+export function BasicInput({...rest}){
     return (
         <>
             <input
-                type={type}
-                id={id}
-                placeholder={placeholder}
-                disabled={isDisabled}
                 className="basic-input"
+                {...rest}
             />
         </>
 
