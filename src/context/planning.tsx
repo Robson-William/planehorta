@@ -5,13 +5,20 @@ type Measures = {
     length:number | undefined
 }
 
+type Production = {
+    name: string,
+    production:number, 
+    productiveUnits:number,
+    plantingDate:string
+}
+
 type Planning = {
     measures: Measures | undefined
-    plants: never[],
+    production: Production[],
     type: string | undefined,
     assignMeasures(width:number, length:number):void,
     assignType(type:string):void,
-    assignPlants():void
+    assignProduction():void
 }
 
 type Props = {
@@ -23,7 +30,7 @@ const PlanningContext = createContext({} as Planning)
 export function PlanningProvider({children}:Props){
     const [measures, setMeasures] = useState<Measures>()
     const [type, setType] = useState<string>("");
-    const [plants, setPlants] = useState([])
+    const [production, setProduction] = useState([])
 
     function assignMeasures(width:number, length:number){
         if(width || length != null){
@@ -40,12 +47,12 @@ export function PlanningProvider({children}:Props){
         }
     }
 
-    function assignPlants(){
+    function assignProduction(){
 
     }
 
     return (
-        <PlanningContext.Provider value={{measures, type, plants, assignMeasures, assignPlants, assignType}}>
+        <PlanningContext.Provider value={{measures, type, production, assignMeasures, assignProduction, assignType}}>
             {children}
         </PlanningContext.Provider>
     )

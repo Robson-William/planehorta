@@ -37,7 +37,7 @@ export function Area(){
                             onChange={e => setLength(e.currentTarget.value)}
                         />
                         <span className="input-separator">=</span>
-                        <BasicInput type="number" id="input-area" placeholder="Area" value={area ? area : undefined} disabled />
+                        <BasicInput type="number" id="input-area" placeholder={area ? area : "Area"} disabled />
                     </div>
 
                     <div id="area-derivated-info">

@@ -1,13 +1,16 @@
 type Props = {
-    className?: string
+    className?: string,
+    plant?: {},
+    name:string,
+    onClick(e):void
 }
 
-export function CheckboxInput({className}:Props) {
+export function CheckboxInput({className, onClick, name}:Props) {
     return (
         <>
             <div className={"custom-checkbox-container" + " " + className}>
-                <input type="checkbox" id="hortalica1" value="Alface" className="custom-input-checkbox"/>
-                <label htmlFor="hortalica1">Alface</label>
+                <input type="checkbox" name="hortalica" value={name} className="custom-input-checkbox" onClick={(e) => onClick(e)}/>
+                <label htmlFor="hortalica">{name}</label>
             </div>
         </>
     )
