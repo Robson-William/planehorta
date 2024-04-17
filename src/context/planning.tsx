@@ -2,7 +2,8 @@ import React, { createContext, useContext, useState } from "react";
 
 type Measures = {
     width:number | undefined,
-    length:number | undefined
+    length:number | undefined,
+    UP:number | undefined
 }
 
 type Production = {
@@ -36,7 +37,8 @@ export function PlanningProvider({children}:Props){
         if(width || length != null){
             setMeasures({
                 width: width,
-                length: length
+                length: length,
+                UP: (width * length) / 1.44
             })
         }
     }
