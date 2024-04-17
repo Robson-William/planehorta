@@ -1,7 +1,16 @@
+import { useState } from "react"
 import Button from "../../../components/Button/Button"
 import "./style.css"
+import { usePlanning } from "../../../context/planning";
 
 export function Type(){
+    const [type, setType] = useState<string>("");
+    const {assignType} = usePlanning();
+
+    function handleButtonClick(){
+        assignType(type)
+    }
+
     return (
         <>
             <div className="body type-mode">
@@ -9,19 +18,29 @@ export function Type(){
 
                 <div id="type-items">
                     <form>
-                        <label className="type-checkbox-variation">
-                            <input type="radio" id="producao-empurrada" name="production-type"/>
-                            <span>Produção empurrada</span>
-                        </label>
+                        <div className="type-checkbox-variation">
+                            <input
+                                type="radio"
+                                value="push-production"
+                                name="production-type"
+                                onChange={(e) => setType(e.currentTarget.value)}
+                            />
+                            <label htmlFor="push-production">Produção empurrada</label>
+                        </div>
 
                         <div className="type-checkbox-variation">
-                            <input type="radio" id="producao-puxada" name="production-type"/>
-                            <label htmlFor="producao-puxada">Produção puxada</label>
+                            <input
+                                type="radio"
+                                value="pull-production"
+                                name="production-type"
+                                onChange={(e) => setType(e.currentTarget.value)}
+                            />
+                            <label htmlFor="pull-production">Produção puxada</label>
                         </div>
                         
                     </form>
                     
-                    <Button text="Continuar" link="/planejar/modelo"/>
+                    <Button text="Continuar" link="/planejar/modelo" handleClick={handleButtonClick}/>
                 </div>
             </div>
         </>
