@@ -9,7 +9,7 @@ import "./style.css"
 
 export function Production(){
     const [selection, setSelection] = useState<Plant[]>([]);
-    const {production} = usePlanning()
+    const {production, assignProduction} = usePlanning()
 
     function handleClick(e:ChangeEvent<HTMLInputElement>){
         const value = e.currentTarget.value
@@ -59,6 +59,10 @@ export function Production(){
         setSelection([...newList])
     }
 
+    function handleButtonClick(){
+        assignProduction(selection)
+    }
+
     return (
         <>
             <div className="body production-mode">
@@ -77,7 +81,7 @@ export function Production(){
                         <span>15</span>
                     </div>
 
-                    <Button text="Continuar" link="/planejar/tipo" />
+                    <Button text="Continuar" link="/planejar/tipo" handleClick={handleButtonClick}/>
                 </div>
             </div>
         </>

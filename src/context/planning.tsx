@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { Plant } from "../mocks/plants";
 
 type Measures = {
     width:number | undefined,
@@ -6,20 +7,20 @@ type Measures = {
     UP:number | undefined
 }
 
-type Production = {
-    name: string,
-    production:number, 
-    productiveUnits:number,
-    plantingDate:string
-}
+// type Production = {
+//     name: string,
+//     production:number, 
+//     productiveUnits:number,
+//     plantingDate:string
+// }
 
 type Planning = {
     measures: Measures | undefined
-    production: Production[],
+    production: Plant[],
     type: string | undefined,
     assignMeasures(width:number, length:number):void,
     assignType(type:string):void,
-    assignProduction():void
+    assignProduction(production: Plant[]):void
 }
 
 type Props = {
@@ -31,7 +32,7 @@ const PlanningContext = createContext({} as Planning)
 export function PlanningProvider({children}:Props){
     const [measures, setMeasures] = useState<Measures>()
     const [type, setType] = useState<string>("");
-    const [production, setProduction] = useState([])
+    const [production, setProduction] = useState<Plant[]>([])
 
     function assignMeasures(width:number, length:number){
         if(width || length != null){
@@ -49,8 +50,10 @@ export function PlanningProvider({children}:Props){
         }
     }
 
-    function assignProduction(){
-
+    function assignProduction(production: Plant[]){
+        if(production.length != 0){
+            setProduction(production)
+        }
     }
 
     return (
