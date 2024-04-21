@@ -8,8 +8,9 @@ import { Plant, plants } from "../../../mocks/plants"
 import "./style.css"
 
 export function Production(){
+    const {measures, production, assignProduction} = usePlanning()
     const [selection, setSelection] = useState<Plant[]>([]);
-    const {production, assignProduction} = usePlanning()
+    const [remainingUP, setRemainingUP] = useState<number>(measures.UP);
 
     function handleClick(e:ChangeEvent<HTMLInputElement>){
         const value = e.currentTarget.value
@@ -47,7 +48,8 @@ export function Production(){
             if(selected.name === name){
                 const updatedProduction = {
                     ...selected,
-                    value: newValue
+                    value: newValue,
+                    necessaryUP: newValue / selected.perUP
                 }
 
                 return updatedProduction
@@ -62,6 +64,22 @@ export function Production(){
     function handleButtonClick(){
         assignProduction(selection)
     }
+
+    function handleRemainingUP(){
+        let necessaryUPSum: number = 0;
+
+        for(let i = 0; i < selection.length; i++){
+            necessaryUPSum += selection[i].necessaryUP;
+        }
+
+        setRemainingUP(measures.UP - necessaryUPSum);
+    }
+
+    useEffect(() => {
+        handleRemainingUP();
+    }, [selection])
+
+    console.log(selection)
 
     return (
         <>
@@ -78,7 +96,9 @@ export function Production(){
 
                 <div id="production-items">
                     <div className="info-container">
-                        <span>15</span>
+                        <span>
+                            {remainingUP}
+                        </span>
                     </div>
 
                     <Button text="Continuar" link="/planejar/tipo" handleClick={handleButtonClick}/>

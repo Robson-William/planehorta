@@ -39,7 +39,7 @@ export function PlanningProvider({children}:Props){
             setMeasures({
                 width: width,
                 length: length,
-                UP: (width * length) / 1.44
+                UP: Math.trunc(((width * length) * 0.75) / 1.44)
             })
         }
     }
