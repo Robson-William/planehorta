@@ -5,7 +5,7 @@ type Props = {
     text:string,
     className?:string,
     link:string,
-    handleClick():void
+    handleClick?():void
 }
 
 export default function Button({text, className, link, handleClick}:Props) {
