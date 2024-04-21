@@ -45,8 +45,8 @@
 
 #model {
     display: grid;
-    grid-template-rows: repeat(9, 50px);
-    grid-template-columns: repeat(13, 50px);
+    grid-template-rows: repeat(auto-fit, minmax(30px, 1em));
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1em));
     grid-auto-flow: column;
     column-gap: 9px;
     background-color: #2AAF74;
@@ -58,8 +58,7 @@
 }
 
 .productive-unit {
+    aspect-ratio: 1 / 1;
     background-color: #E19955;
-    width: 50px;
-    height: 50px;
     border: 1px solid #000000;
 }

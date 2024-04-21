@@ -1,7 +1,11 @@
+import { usePlanning } from "../../context/planning"
 import "./style.css"
 
 export function Model(){
-    const keys = [...Array(135).keys()]
+    const {measures, production, type} = usePlanning()
+    const keys = [...Array(Math.trunc(measures.UP)).keys()]
+
+    console.log(measures, production, type)
 
     return (
         <>
@@ -11,7 +15,7 @@ export function Model(){
                 <div id="model">
                     {
                     keys.map((item) => (
-                        <div className="productive-unit" id={"" + item}>
+                        <div className="productive-unit" id={"" + item} key={item}>
 
                         </div>
                         ))
@@ -22,19 +26,21 @@ export function Model(){
                 <span id="production-title">Produção</span>
 
                 <table className="table">
-                    <tr>
-                        <th>Nome</th>
-                        <th>Unidade</th>
-                        <th>Produção total</th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <div className="color-square"></div>
-                            Alface
-                        </th>
-                        <th>80</th>
-                        <th>80</th>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Unidade</th>
+                            <th>Produção total</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div className="color-square"></div>
+                                Alface
+                            </th>
+                            <th>80</th>
+                            <th>80</th>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </>
