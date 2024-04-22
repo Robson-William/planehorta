@@ -14,7 +14,7 @@ type Measures = {
 //     plantingDate:string
 // }
 
-type Planning = {
+export type Planning = {
     measures: Measures | undefined,
     production: Plant[],
     type: string,
@@ -27,7 +27,7 @@ type Props = {
     children:React.ReactNode
 }
 
-const PlanningContext = createContext({} as Planning)
+export const PlanningContext = createContext({} as Planning)
 
 export function PlanningProvider({children}:Props){
     const [measures, setMeasures] = useState<Measures>()
