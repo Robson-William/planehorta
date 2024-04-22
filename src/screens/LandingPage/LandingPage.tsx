@@ -12,7 +12,7 @@ export function LandingPage(){
                     Lorem ipsum dolor sit amet consectetur. Augue elementum rhoncus scelerisque diam sapien arcu dignissim tincidunt nisi. Eu odio id purus nulla. Ipsum nec nunc ullamcorper purus dui tristique amet. Nunc tortor tortor semper et aliquet quam amet.
                     </p>
 
-                    <Button text="Comece a planejar sua horta!" className="landing-variation" link="/planejar/area" />
+                    <Button text="Comece a planejar sua horta!" className="landing-variation" link="/planejar/area" isActive={true}/>
                 </div>
             </div>
         </>

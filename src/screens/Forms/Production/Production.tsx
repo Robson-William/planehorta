@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "../../../components/Button/Button"
 import { Dropdown } from "../../../components/Dropdown/Dropdown"
 import { CheckboxInput } from "../../../components/Input/CheckboxInput"
@@ -8,11 +8,11 @@ import { Plant, plants } from "../../../mocks/plants"
 import "./style.css"
 
 export function Production(){
-    const {measures, production, assignProduction} = usePlanning()
+    const {measures, assignProduction} = usePlanning()
     const [selection, setSelection] = useState<Plant[]>([]);
     const [remainingUP, setRemainingUP] = useState<number>(measures!.UP);
 
-    function handleClick(e:ChangeEvent<HTMLInputElement>){
+    function handleClick(e:React.MouseEvent<HTMLInputElement>){
         const value = e.currentTarget.value
 
         let newList = selection;

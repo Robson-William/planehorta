@@ -2,7 +2,7 @@ type Props = {
     className?: string,
     plant?: {},
     name:string,
-    onClick(e):void
+    onClick(e:React.MouseEvent<HTMLInputElement>):void
 }
 
 export function CheckboxInput({className, onClick, name}:Props) {

@@ -64,8 +64,8 @@ export function Model(){
                 {type == "pull-production" &&
                     <div id="model">
                         {
-                            production.map((product, i) => (
-                                Array(product.necessaryUP).fill(1).map((div, i) => (
+                            production.map((product) => (
+                                Array(product.necessaryUP).fill(1).map((i) => (
                                     <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
                                         <span>{product.name}</span>
                                     </div>
@@ -87,8 +87,8 @@ export function Model(){
                 {type == "push-production" &&
                     <div id="model">
                         {
-                            production.map((product, i) => (
-                                Array(product.necessaryUP * 5).fill(1).map((div, i) => (
+                            production.map((product) => (
+                                Array(product.necessaryUP * 5).fill(1).map((i) => (
                                     <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
                                         <span>{product.name}</span>
                                     </div>
