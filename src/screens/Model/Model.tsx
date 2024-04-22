@@ -44,7 +44,7 @@ export function Model(){
     }
 
     useEffect(() => {
-        handleRemainingUP()
+        handleRemainingUP();
     }, [])
 
     console.log(measures, production, type)
@@ -58,7 +58,7 @@ export function Model(){
                     {
                         production.map((product, i) => (
                             Array(product.necessaryUP).fill(1).map((div, i) => (
-                                <div style={productiveUnitStyle} id={"" + product.name} key={""+ product.name + i}>
+                                <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
                                     <span>{product.name}</span>
                                 </div>
                             ))
@@ -77,42 +77,55 @@ export function Model(){
 
                 <span id="production-title">Produção</span>
 
-                <table className="table">
+                {type === "push-production" &&
+                    <table className="table">
+                        <tbody>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Unidade por semana</th>
+                                <th>Produção total</th>
+                            </tr>
+
+                            {
+                                production.map((product) => (
+                                    <tr>
+                                        <th>
+                                            <div className="color-square" style={{backgroundColor: product.color}}></div>
+                                            {product.name}
+                                        </th>
+                                        <th>{product.value}</th>
+                                        <th>{product.value}</th>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                }
+
+                {type === "pull-production" &&
+                    <table className="table">
                     <tbody>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Unidade</th>
-                            <th>Produção total</th>
-                        </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Unidade</th>
+                        <th>Produção total</th>
+                    </tr>
 
-                        {type === "push-production" &&
-                            production.map((product) => (
-                                <tr>
-                                    <th>
-                                        <div className="color-square"></div>
-                                        {product.name}
-                                    </th>
-                                    <th>{product.value}</th>
-                                    <th>{product.value}</th>
-                                </tr>
-                            ))
-                        }
-
-                        {type === "pull-production" &&
-                            production.map((product) => (
-                                <tr>
-                                    <th>
-                                        <div className="color-square"></div>
-                                        {product.name}
-                                    </th>
-                                    <th>{product.value}</th>
-                                    <th>{product.value}</th>
-                                </tr>
-                            ))
-                        }
-
+                    {
+                        production.map((product) => (
+                            <tr>
+                                <th>
+                                    <div className="color-square" style={{backgroundColor: product.color}} ></div>
+                                    {product.name}
+                                </th>
+                                <th>{product.value}</th>
+                                <th>{product.value}</th>
+                            </tr>
+                        ))
+                    }
                     </tbody>
-                </table>
+                    </table>
+                }
             </div>
         </>
     )
