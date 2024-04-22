@@ -3,7 +3,8 @@ export type Plant = {
     value:number,
     perUP:number,
     necessaryUP:number,
-    color:string
+    color:string,
+    firstPlant: string
 }
 
 const randomHexColorCode = () => {
@@ -12,6 +13,6 @@ const randomHexColorCode = () => {
 };
 
 export const plants = [
-    {name: "Alface", value: 0, perUP: 16, necessaryUP: 0, color: randomHexColorCode()},
-    {name: "Couve", value: 0, perUP: 9, necessaryUP: 0, color: randomHexColorCode()}
+    {name: "Alface", value: 0, perUP: 16, necessaryUP: 0, color: randomHexColorCode(), firstPlant: ""},
+    {name: "Couve", value: 0, perUP: 9, necessaryUP: 0, color: randomHexColorCode(), firstPlant: ""}
 ]

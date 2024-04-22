@@ -51,6 +51,23 @@ export function Production(){
                     value: newValue,
                     necessaryUP: newValue / selected.perUP
                 }
+                console.log("Updated:", updatedProduction)
+                return updatedProduction
+            }
+
+            return selected
+        })
+
+        setSelection([...newList])
+    }
+
+    function handleDateChange(name:string, newValue:string){
+        const newList = selection.map((selected) => {
+            if(selected.name === name){
+                const updatedProduction = {
+                    ...selected,
+                    firstPlant: newValue
+                }
 
                 return updatedProduction
             }
@@ -79,8 +96,6 @@ export function Production(){
         handleRemainingUP();
     }, [selection])
 
-    console.log(selection)
-
     return (
         <>
             <div className="body production-mode">
@@ -91,7 +106,7 @@ export function Production(){
                 </Dropdown>
                 
                 {selection.map((selected) => (
-                    <ProductionInput plant={selected} key={selected.name} editValue={handleProductionChange}/>
+                    <ProductionInput plant={selected} key={selected.name} editValue={handleProductionChange} editDate={handleDateChange}/>
                 ))}
 
                 <div id="production-items">
