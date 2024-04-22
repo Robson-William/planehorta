@@ -24,7 +24,7 @@ export function Area(){
             setArea(width * height)
         }
     }, [width, height])
-
+    console.log(measures)
     return (
         <>
             <div className="body area-mode">
@@ -54,7 +54,7 @@ export function Area(){
                         <BasicInput type="number" id="input-productive-units" placeholder="0" disabled />
                     </div>
 
-                    <Button text="Continuar" link="/planejar/tipo" isActive={measures?.width && measures.height ? true : false}/>
+                    <Button text="Continuar" link="/planejar/tipo" isActive={measures?.width && measures.height ? true : false} />
                 </form>
             </div>
         </>

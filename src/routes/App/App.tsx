@@ -6,10 +6,8 @@ function App() {
 
   return (
     <>
-      <PlanningProvider>
-        <Menu  />
-        <Outlet />
-      </PlanningProvider>
+      <Menu  />
+      <Outlet />
     </>
   )
 }

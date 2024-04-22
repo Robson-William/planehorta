@@ -32,6 +32,8 @@ export const routes = (context:Planning) => createBrowserRouter([
                     if(!measures){
                         return redirect("/planejar/area")
                     }
+
+                    return null
                 }
             },
             {
@@ -43,6 +45,8 @@ export const routes = (context:Planning) => createBrowserRouter([
                     if(!measures){
                         return redirect("/planejar/area")
                     }
+
+                    return null
                 }
             },
             {
@@ -54,6 +58,7 @@ export const routes = (context:Planning) => createBrowserRouter([
                     if(!type || !measures || !production){
                         return redirect("/planejar/tipo")
                     }
+                    return null
                 }
             }
         ]
