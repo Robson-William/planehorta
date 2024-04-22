@@ -40,7 +40,7 @@ export function Type(){
                         
                     </form>
                     
-                    <Button text="Continuar" link="/planejar/modelo" handleClick={handleButtonClick}/>
+                    <Button text="Continuar" link="/planejar/producao" handleClick={handleButtonClick} isActive={type != "" ? true : false}/>
                 </div>
             </div>
         </>

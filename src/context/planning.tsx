@@ -3,7 +3,7 @@ import { Plant } from "../mocks/plants";
 
 type Measures = {
     width:number,
-    length:number,
+    height:number,
     UP:number
 }
 
@@ -15,7 +15,7 @@ type Measures = {
 // }
 
 type Planning = {
-    measures: Measures,
+    measures: Measures | undefined,
     production: Plant[],
     type: string,
     assignMeasures(width:number, length:number):void,
@@ -30,16 +30,16 @@ type Props = {
 const PlanningContext = createContext({} as Planning)
 
 export function PlanningProvider({children}:Props){
-    const [measures, setMeasures] = useState<Measures>({width: 0, length: 0, UP: 0})
+    const [measures, setMeasures] = useState<Measures>()
     const [type, setType] = useState<string>("");
     const [production, setProduction] = useState<Plant[]>([])
 
-    function assignMeasures(width:number, length:number){
+    function assignMeasures(width:number, height:number){
         if(width || length != null){
             setMeasures({
                 width: width,
-                length: length,
-                UP: Math.trunc(((width * length) * 0.75) / 1.44)
+                height: height,
+                UP: Math.trunc(((width * height) * 0.75) / 1.44)
             })
         }
     }

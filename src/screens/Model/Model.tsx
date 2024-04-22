@@ -8,10 +8,10 @@ export function Model(){
 
     let square = 0
 
-    if(measures.UP > 200){
-        square = 7000 / measures.UP;
+    if(measures!.UP > 200){
+        square = 7000 / measures!.UP;
     } else {
-        square = 3400 / measures.UP 
+        square = 3400 / measures!.UP 
     }
     
 
@@ -37,7 +37,14 @@ export function Model(){
             necessaryUPSum += product.necessaryUP;
         })
 
-        let keysPlaceholder = [...Array(Math.trunc(measures.UP - necessaryUPSum)).keys()]
+        let keysPlaceholder:number[] = [];
+
+        if(type === "pull-production"){
+            keysPlaceholder = [...Array(Math.trunc(measures!.UP - necessaryUPSum)).keys()]
+        } else {
+            keysPlaceholder = [...Array(Math.trunc(measures!.UP - (necessaryUPSum * 5))).keys()]
+        }
+
 
         setKeys(keysPlaceholder);
 
@@ -54,26 +61,51 @@ export function Model(){
             <div className="body model-mode">
                 <span id="model-title">Modelo</span>
                 
-                <div id="model">
-                    {
-                        production.map((product, i) => (
-                            Array(product.necessaryUP).fill(1).map((div, i) => (
-                                <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
-                                    <span>{product.name}</span>
+                {type == "pull-production" &&
+                    <div id="model">
+                        {
+                            production.map((product, i) => (
+                                Array(product.necessaryUP).fill(1).map((div, i) => (
+                                    <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
+                                        <span>{product.name}</span>
+                                    </div>
+                                ))
+                            ))
+                        }
+                    
+
+                        {
+                            keys.map((item) => (
+                                <div style={productiveUnitStyle} id={"" + item} key={item}>
+                                    <span>Livre</span>
                                 </div>
                             ))
-                        ))
-                    }
+                        }
+                    </div>
+                }
 
-                    {
-                        keys.map((item) => (
-                            <div style={productiveUnitStyle} id={"" + item} key={item}>
-                                <span>Livre</span>
-                            </div>
-                        ))
-                    }
+                {type == "push-production" &&
+                    <div id="model">
+                        {
+                            production.map((product, i) => (
+                                Array(product.necessaryUP * 5).fill(1).map((div, i) => (
+                                    <div style={{...productiveUnitStyle, ...{backgroundColor: product.color}}} id={"" + product.name} key={""+ product.name + i}>
+                                        <span>{product.name}</span>
+                                    </div>
+                                ))
+                            ))
+                        }
+                    
 
-                </div>
+                        {
+                            keys.map((item) => (
+                                <div style={productiveUnitStyle} id={"" + item} key={item}>
+                                    <span>Livre</span>
+                                </div>
+                            ))
+                        }
+                    </div>
+                }
 
                 <span id="production-title">Produção</span>
 

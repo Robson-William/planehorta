@@ -10,7 +10,7 @@ import "./style.css"
 export function Production(){
     const {measures, production, assignProduction} = usePlanning()
     const [selection, setSelection] = useState<Plant[]>([]);
-    const [remainingUP, setRemainingUP] = useState<number>(measures.UP);
+    const [remainingUP, setRemainingUP] = useState<number>(measures!.UP);
 
     function handleClick(e:ChangeEvent<HTMLInputElement>){
         const value = e.currentTarget.value
@@ -72,7 +72,7 @@ export function Production(){
             necessaryUPSum += selection[i].necessaryUP;
         }
 
-        setRemainingUP(measures.UP - necessaryUPSum);
+        setRemainingUP(measures!.UP - necessaryUPSum);
     }
 
     useEffect(() => {
@@ -101,7 +101,7 @@ export function Production(){
                         </span>
                     </div>
 
-                    <Button text="Continuar" link="/planejar/tipo" handleClick={handleButtonClick}/>
+                    <Button text="Continuar" link="/planejar/modelo" handleClick={handleButtonClick} isActive={selection.length != 0 ? true : false}/>
                 </div>
             </div>
         </>

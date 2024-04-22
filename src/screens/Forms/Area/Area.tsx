@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, ChangeEvent } from "react"
 import Button from "../../../components/Button/Button"
 import { BasicInput } from "../../../components/Input/BasicInput"
 import { usePlanning } from "../../../context/planning"
@@ -7,15 +7,23 @@ import "./style.css"
 export function Area(){
     const {measures, assignMeasures} = usePlanning()
     const [width, setWidth] = useState<number | undefined>();
-    const [length, setLength] = useState<number | undefined>();
+    const [height, setHeight] = useState<number | undefined>();
     const [area, setArea] = useState<number | undefined>()
 
+    function handleWidthChange(e:ChangeEvent<HTMLInputElement>){
+        setWidth(e.currentTarget.valueAsNumber)
+    }
+
+    function handleHeightChange(e:ChangeEvent<HTMLInputElement>){
+        setHeight(e.currentTarget.valueAsNumber)
+    }
+
     useEffect(() => {
-        if(width && length != undefined){
-            assignMeasures(width, length)
-            setArea(width * length)
+        if(width && height != undefined){
+            assignMeasures(width, height)
+            setArea(width * height)
         }
-    }, [width, length])
+    }, [width, height])
 
     return (
         <>
@@ -27,14 +35,15 @@ export function Area(){
                             type="number"
                             id="input-width"
                             placeholder="Largura"
-                            onChange={e => setWidth(e.currentTarget.value)}
+                            onChange={handleWidthChange}
                         />
                         <span className="input-separator">X</span>
                         <BasicInput
                             type="number"
                             id="input-height"
                             placeholder="Altura"
-                            onChange={e => setLength(e.currentTarget.value)}
+                            value={measures ? measures.height : height}
+                            onChange={handleHeightChange}
                         />
                         <span className="input-separator">=</span>
                         <BasicInput type="number" id="input-area" placeholder={area ? area : "Area"} disabled />
@@ -45,7 +54,7 @@ export function Area(){
                         <BasicInput type="number" id="input-productive-units" placeholder="0" disabled />
                     </div>
 
-                    <Button text="Continuar" link="/planejar/producao" />
+                    <Button text="Continuar" link="/planejar/tipo" isActive={measures?.width && measures.height ? true : false}/>
                 </form>
             </div>
         </>
